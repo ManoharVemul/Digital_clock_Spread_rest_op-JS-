@@ -5,14 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="shortcut icon" href="./mfavcon.png" type="image/x-icon">
+<style>
 
+div {
+   display: inlineblock; 
+   margin-top: 80px;
+   text-align: center;
+    font-size: 40px;
+   color: rgb(124, 46, 213);
+}
+
+
+</style>
 </head>
 <body>
-    
 
+
+
+    
+<div>
 <h1 id="ganta"></h1>
 <h1 id="nimi"></h1>
 <h1 id="secan"></h1>
+
+</div>
+
 <h1 id=""></h1>
 
 <script>
@@ -20,17 +37,51 @@
 let a = new Date();
 console.log(a)
 let hour = document.getElementById("ganta")
-hour.innerHTML=a.getHours()
-console.log(hour);
+if(a.getHours()==0){
+    hour.innerHTML=a.getHours()+12
+}else if(a.getHours()<13){
+    hour.innerHTML=a.getHours()
+} else {
+
+    hour.innerHTML=a.getHours()-12
+}
+
+
 
 
 let min = document.getElementById("nimi")
-min.innerHTML=a.getHours()
+min.innerHTML=a.getMinutes()
 console.log(min);
 
 let sec = document.getElementById("secan")
-sec.innerHTML=a.getHours()
+sec.innerHTML=a.getSeconds()
 console.log(sec);
+
+
+
+
+
+// sppread operator
+
+let obj = {
+    name:"manohar",
+    age:25,
+    native:"karimnagar"
+}
+let obj2 = {
+    currentLiving:"hyderabad",
+    goal:"front-end developer"
+}
+let data = {...obj,...obj2}
+
+console.log(data)
+
+for (i in data){
+   console.log(Object.keys(data))
+    console.log(Object.values(data))
+}
+
+
 
 </script>
 
